@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="plugin.audio.ici-musique" name="ICI Radio" version="0.6" provider-name="pchevallier">
+    <requires>
+        <import addon="xbmc.python" version="3.0.1" />
+    </requires>
+    <extension point="xbmc.python.pluginsource" library="default.py">
+        <provides>audio</provides>
+    </extension>
+    <extension point="xbmc.addon.metadata">
+        <language>en</language>
+        <summary lang="en_GB">ICI Radio</summary>
+        <license>MIT</license>
+        <description lang="en_GB">Add-on for streaming ICI Radio live stations.</description>
+        <platform>all</platform>
+        <source>https://github.com/pchevallier/plugin.audio.ici-musique</source>
+        <assets>
+            <icon>resources/icon.png</icon>
+            <fanart>resources/fanart.jpg</fanart>
+        </assets>
+    </extension>
+</addon>
