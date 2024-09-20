@@ -16,8 +16,12 @@ ADDON_HANDLE = int(sys.argv[1])
 ICON = set_file_constant("icon.png")
 FANART = set_file_constant("fanart.jpg")
 
-radio_stations = [{'name':'ICI Musique','title':'Montreal','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Frcavliveaudio.akamaized.net%2Fhls%2Flive%2F2006979%2FM-7QMTL0_MTL%2Fadaptive_192%2Fchunklist_ao.m3u8&title=ICI+Musique+-+Montreal&key=2&location=montreal'},
-                  {'name':'ICI Premiere','title':'Montreal','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Frcavliveaudio.akamaized.net%2Fhls%2Flive%2F2006635%2FP-2QMTL0_MTL%2Fadaptive_192%2Fchunklist_ao.m3u8&title=ICI+Musique+-+Montreal&key=2&location=montreal'},
+radio_stations = [{'name':'ICI Musique','title':'Eastern','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Frcavliveaudio.akamaized.net%2Fhls%2Flive%2F2006979%2FM-7QMTL0_MTL%2Fadaptive_192%2Fchunklist_ao.m3u8&title=ICI+Musique+-+Montreal&key=2&location=montreal'},
+                  {'name':'ICI Musique','title':'Mountain','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Frcavliveaudio.akamaized.net%2Fhls%2Flive%2F2006999%2FM-7AEDM0_EDM%2Fadaptive_192%2Fchunklist_ao.m3u8&title=ICI+Musique+-+Montreal&key=2&location=montreal'},
+                  {'name':'ICI Musique','title':'Pacific','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Frcavliveaudio.akamaized.net%2Fhls%2Flive%2F2006996%2FM-7BVAN0_VAN%2Fadaptive_192%2Fchunklist_ao.m3u8&title=ICI+Musique+-+Montreal&key=2&location=montreal'},
+                  {'name':'ICI Premiere','title':'Eastern','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Frcavliveaudio.akamaized.net%2Fhls%2Flive%2F2006635%2FP-2QMTL0_MTL%2Fadaptive_192%2Fchunklist_ao.m3u8&title=ICI+Musique+-+Montreal&key=2&location=montreal'},
+                  {'name':'ICI Premiere','title':'Mountain','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Frcavliveaudio.akamaized.net%2Fhls%2Flive%2F2006949%2FP-2AEDM0_EDM%2Fadaptive_192%2Fchunklist_ao.m3u8&title=ICI+Musique+-+Montreal&key=2&location=montreal'},
+                  {'name':'ICI Premiere','title':'Pacific','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Frcavliveaudio.akamaized.net%2Fhls%2Flive%2F2006975%2FP-2BVAN0_VAN%2Fadaptive_192%2Fchunklist_ao.m3u8&title=ICI+Musique+-+Montreal&key=2&location=montreal'},
                   {'name':'ICI Musique Classique','title':'Montreal','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Frcavliveaudio.akamaized.net%2Fhls%2Flive%2F2007000%2FMUSE%2Fadaptive_192%2Fchunklist_ao.m3u8&title=ICI+Musique+-+Montreal&key=2&location=montreal'}]
 
 
@@ -30,6 +34,19 @@ LOCATION = None
 BASE_URL = sys.argv[0]
 ID = BASE_URL.split('://')[1].split('/')[0]
 
+
+def extract_radio_stations():
+    # Initialize a set to store unique names
+    unique_names = set()
+
+    # Parse the data to extract unique names
+    for item in radio_stations:
+        name = item['name']
+        unique_names.add(name)
+
+    # Convert the set back to a list if needed
+    unique_names = list(unique_names)
+    return unique_names
 
 def build_url(query):
     xbmc.log(level=xbmc.LOGINFO, msg=f"{ID}: build_url: {BASE_URL} {query}")
@@ -119,10 +136,11 @@ def play_stream(url):
     
 
 def list_stations():                                                                                                                                                                                   
-    for station in radio_stations:
-        url = build_url({"mode": "folder", "foldername": station['name']})
-        xbmc.log(level=xbmc.LOGINFO, msg=f"list_station: {url} {station['name']}")                                                                                                                        
-        li = xbmcgui.ListItem(station['name'])                                                                                                                                                                     
+    list_of_radio_stations=extract_radio_stations()
+    for station in list_of_radio_stations:
+        url = build_url({"mode": "folder", "foldername": station})
+        xbmc.log(level=xbmc.LOGINFO, msg=f"list_station: {url}")                                                                                                                        
+        li = xbmcgui.ListItem(station)                                                                                                                                                      
         xbmcplugin.addDirectoryItem(                                               
             handle=ADDON_HANDLE, url=url, listitem=li, isFolder=True               
         )                                                                                                                                                        
