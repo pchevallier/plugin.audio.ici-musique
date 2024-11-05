@@ -22,9 +22,12 @@ radio_stations = [{'name':'ICI Musique','title':'Eastern','stream':'plugin://plu
                   {'name':'ICI Premiere','title':'Eastern','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Frcavliveaudio.akamaized.net%2Fhls%2Flive%2F2006635%2FP-2QMTL0_MTL%2Fadaptive_192%2Fchunklist_ao.m3u8&title=ICI+Musique+-+Montreal&key=2&location=montreal'},
                   {'name':'ICI Premiere','title':'Mountain','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Frcavliveaudio.akamaized.net%2Fhls%2Flive%2F2006949%2FP-2AEDM0_EDM%2Fadaptive_192%2Fchunklist_ao.m3u8&title=ICI+Musique+-+Montreal&key=2&location=montreal'},
                   {'name':'ICI Premiere','title':'Pacific','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Frcavliveaudio.akamaized.net%2Fhls%2Flive%2F2006975%2FP-2BVAN0_VAN%2Fadaptive_192%2Fchunklist_ao.m3u8&title=ICI+Musique+-+Montreal&key=2&location=montreal'},
-                  {'name':'ICI Musique Classique','title':'Montreal','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Frcavliveaudio.akamaized.net%2Fhls%2Flive%2F2007000%2FMUSE%2Fadaptive_192%2Fchunklist_ao.m3u8&title=ICI+Musique+-+Montreal&key=2&location=montreal'}]
-
-
+                  {'name':'ICI Musique Classique','title':'Montreal','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Frcavliveaudio.akamaized.net%2Fhls%2Flive%2F2007000%2FMUSE%2Fadaptive_192%2Fchunklist_ao.m3u8&title=ICI+Musique+-+Montreal&key=2&location=montreal'},
+                  {'name':'CBC Music','title':'Pacific','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Fcbcradiolive.akamaized.net%2Fhls%2Flive%2F2041059%2FES_R2PVC%2Fmaster.m3u8&title=CBC+Music+-+Pacific&key=2&location=vancouver'},
+                  {'name':'CBC Music','title':'Eastern','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Fcbcradiolive.akamaized.net%2Fhls%2Flive%2F2041057%2FES_R2ETR%2Fmaster.m3u8&title=CBC+Music+-+Eastern&key=2&location=toronto'},
+                  {'name':'CBC Music','title':'Mountain','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Fcbcradiolive.akamaized.net%2Fhls%2Flive%2F2041058%2FES_R2MED%2Fmaster.m3u8&title=CBC+Music+-+Mountain&key=2&location=edmonton'},
+                  {'name':'CBC Music','title':'Central','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Fcbcradiolive.akamaized.net%2Fhls%2Flive%2F2041056%2FES_R2CWP%2Fmaster.m3u8&title=CBC+Music+-+Central&key=2&location=winnipeg'}, 
+                  {'name':'CBC Music','title':'Atlantic','stream':'plugin://plugin.audio.ici-musique/?mode=stream&url=https%3A%2F%2Fcbcradiolive.akamaized.net%2Fhls%2Flive%2F2041055%2FES_R2AHF%2Fmaster.m3u8&title=CBC+Music+-+Atlantic&key=2&location=halifax'}]
 PROGRAM = None
 PROGRAM_SCHEDULE = None
 TRACK = None
